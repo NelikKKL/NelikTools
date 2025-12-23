@@ -10,7 +10,8 @@ CSS validation.
 Password generator.      
 Gradient generator. 
 Base64 encoding and decoding.  
-palette generator.    
+palette generator.   
+examination URL And Mail.     
 
 ✅ Completely local work.        
 🔒 Data security.  
