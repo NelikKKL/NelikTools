@@ -6,8 +6,8 @@ https://github.com/NelikKKL/NelikTools/blob/main/EnglishREADME.md English versio
 проверка json.    
 проверка xml.   
 генератор паролей.    
-генератор градиентов
-проверка css
+генератор градиентов.         
+проверка css.     
 и т.д
 
 ✅ Полностью локальная работа
