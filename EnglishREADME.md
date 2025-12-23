@@ -4,7 +4,7 @@ This is an offline tool.
 
 # what can he do?
 
-✅ Completely local work
+✅ Completely local work.        
 🔒 Data security.  
 ⚡ Instant results.      
 📱 Responsive design
