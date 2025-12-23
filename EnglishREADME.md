@@ -3,6 +3,11 @@
 This is an offline tool.
 
 # what can he do?
+HTML validation.    
+JSON validation.   
+XML validation.    
+Password generator.      
+Gradient generator.     
 
 ✅ Completely local work.        
 🔒 Data security.  
