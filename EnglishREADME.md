@@ -8,7 +8,8 @@ JSON validation.
 XML validation.    
 CSS validation.     
 Password generator.      
-Gradient generator.     
+Gradient generator. 
+Base64 encoding and decoding.     
 
 ✅ Completely local work.        
 🔒 Data security.  
