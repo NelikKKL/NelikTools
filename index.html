@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверочник Pro - Локальные инструменты</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💟</text></svg>">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Проверочник<span>.</span>Pro</a>
+            <nav>
+                <ul>
+                    <li><a href="#html-validator" class="active">HTML/CSS</a></li>
+                    <li><a href="#json-validator">JSON/XML</a></li>
+                    <li><a href="#email-validator">Email/URL</a></li>
+                    <li><a href="#security-tools">Безопасность</a></li>
+                    <li><a href="#color-tools">Цвета</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Локальные инструменты для всех проверок</h1>
+            <p>Все инструменты работают в вашем браузере без отправки данных на сервер</p>
+            <a href="#tools" class="btn btn-primary">Начать работу</a>
+        </div>
+    </section>
+
+    <section class="section" id="html-validator">
+        <div class="container">
+            <div class="section-title">
+                <h2>HTML и CSS валидаторы</h2>
+                <p>Проверяйте код прямо в браузере без отправки на сервер</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">📝</div>
+                    <h3>HTML Валидатор</h3>
+                    <div class="tool-content">
+                        <textarea id="html-input" placeholder="Введите HTML код для проверки..."><!DOCTYPE html>
+<html>
+<head>
+    <title>Тест</title>
+</head>
+<body>
+    <h1>Привет, мир!</h1>
+    <p>Это тестовый HTML код</p>
+</body>
+</html></textarea>
+                        <button class="btn btn-primary" onclick="validateHTML()">Проверить HTML</button>
+                        <div id="html-result" class="result-container"></div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <h3>CSS Валидатор</h3>
+                    <div class="tool-content">
+                        <textarea id="css-input" placeholder="Введите CSS код для проверки...">body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}</textarea>
+                        <button class="btn btn-primary" onclick="validateCSS()">Проверить CSS</button>
+                        <div id="css-result" class="result-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="json-validator">
+        <div class="container">
+            <div class="section-title">
+                <h2>JSON и XML валидаторы</h2>
+                <p>Проверка форматов данных и структуры</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">📊</div>
+                    <h3>JSON Валидатор</h3>
+                    <div class="tool-content">
+                        <textarea id="json-input" placeholder="Введите JSON данные для проверки...">{
+    "name": "Иван",
+    "age": 30,
+    "email": "ivan@example.com",
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "address": {
+        "city": "Москва",
+        "street": "Тверская"
+    }
+}</textarea>
+                        <button class="btn btn-primary" onclick="validateJSON()">Проверить JSON</button>
+                        <button class="btn btn-secondary" onclick="formatJSON()">Форматировать</button>
+                        <div id="json-result" class="result-container"></div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">XMLLoader</div>
+                    <h3>XML Валидатор</h3>
+                    <div class="tool-content">
+                        <textarea id="xml-input" placeholder="Введите XML данные для проверки..."><?xml version="1.0" encoding="UTF-8"?>
+<note>
+    <to>Петр</to>
+    <from>Анна</from>
+    <heading>Напоминание</heading>
+    <body>Не забудь про встречу завтра!</body>
+</note></textarea>
+                        <button class="btn btn-primary" onclick="validateXML()">Проверить XML</button>
+                        <div id="xml-result" class="result-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="email-validator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Email и URL проверки</h2>
+                <p>Валидация email-адресов и URL-адресов</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">📧</div>
+                    <h3>Email Валидатор</h3>
+                    <div class="tool-content">
+                        <input type="text" id="email-input" placeholder="Введите email для проверки..." value="test@example.com">
+                        <button class="btn btn-primary" onclick="validateEmail()">Проверить Email</button>
+                        <div id="email-result" class="result-container"></div>
+                        <div class="bulk-section">
+                            <h4>Массовая проверка</h4>
+                            <textarea id="emails-bulk" placeholder="test1@example.com
+test2@example.ru
+invalid-email">test@example.com
+user.name@domain.co.uk
+invalid-email</textarea>
+                            <button class="btn btn-secondary" onclick="validateEmailsBulk()">Проверить все</button>
+                            <div id="emails-bulk-result" class="result-container"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">🔗</div>
+                    <h3>URL Валидатор</h3>
+                    <div class="tool-content">
+                        <input type="text" id="url-input" placeholder="Введите URL для проверки..." value="https://example.com">
+                        <button class="btn btn-primary" onclick="validateURL()">Проверить URL</button>
+                        <div id="url-result" class="result-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="security-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Инструменты безопасности</h2>
+                <p>Генераторы паролей и кодировщики</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🔑</div>
+                    <h3>Генератор паролей</h3>
+                    <div class="tool-content">
+                        <div class="password-options">
+                            <label>
+                                <input type="checkbox" id="include-uppercase" checked> Заглавные буквы
+                            </label>
+                            <label>
+                                <input type="checkbox" id="include-lowercase" checked> Строчные буквы
+                            </label>
+                            <label>
+                                <input type="checkbox" id="include-numbers" checked> Цифры
+                            </label>
+                            <label>
+                                <input type="checkbox" id="include-symbols"> Символы (!@#$%^&)
+                            </label>
+                            <div class="slider-container">
+                                <label>Длина пароля: <span id="password-length">12</span></label>
+                                <input type="range" id="password-length-slider" min="8" max="32" value="12">
+                            </div>
+                        </div>
+                        <div class="password-result">
+                            <input type="text" id="generated-password" readonly>
+                            <button class="btn btn-secondary" onclick="copyPassword()">Копировать</button>
+                            <button class="btn btn-primary" onclick="generatePassword()">Сгенерировать</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">🔐</div>
+                    <h3>Base64 Кодировщик</h3>
+                    <div class="tool-content">
+                        <textarea id="base64-input" placeholder="Введите текст для кодирования/декодирования...">Привет, мир! Это тестовый текст для Base64.</textarea>
+                        <div class="button-group">
+                            <button class="btn btn-primary" onclick="encodeBase64()">Кодировать</button>
+                            <button class="btn btn-secondary" onclick="decodeBase64()">Декодировать</button>
+                        </div>
+                        <div id="base64-result" class="result-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="color-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Цветовые инструменты</h2>
+                <p>Генератор градиентов и палитр цветов</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <h3>Генератор градиентов</h3>
+                    <div class="tool-content">
+                        <div class="color-picker">
+                            <div class="color-inputs">
+                                <div>
+                                    <label>Цвет 1:</label>
+                                    <input type="color" id="color1" value="#8e24aa">
+                                </div>
+                                <div>
+                                    <label>Цвет 2:</label>
+                                    <input type="color" id="color2" value="#37474f">
+                                </div>
+                                <div>
+                                    <label>Направление:</label>
+                                    <select id="gradient-direction">
+                                        <option value="to right">Вправо</option>
+                                        <option value="to bottom" selected>Вниз</option>
+                                        <option value="to left">Влево</option>
+                                        <option value="to top">Вверх</option>
+                                        <option value="to bottom right">По диагонали</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="gradient-preview" id="gradient-preview"></div>
+                            <div class="gradient-code">
+                                <input type="text" id="gradient-code" readonly>
+                                <button class="btn btn-secondary" onclick="copyGradient()">Копировать код</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">🔳</div>
+                    <h3>Генератор палитр</h3>
+                    <div class="tool-content">
+                        <div class="color-palette">
+                            <div class="palette-colors" id="palette-colors">
+                                <!-- Цвета будут добавлены динамически -->
+                            </div>
+                            <button class="btn btn-primary" onclick="generatePalette()">Сгенерировать палитру</button>
+                            <div class="palette-info">
+                                <p>Выберите базовый цвет:</p>
+                                <input type="color" id="base-color" value="#6a1b9a">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Проверочник Pro</h3>
+                    <p>Все инструменты работают локально в вашем браузере. Никакие данные не отправляются на серверы.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Категории инструментов</h3>
+                    <ul class="footer-links">
+                        <li><a href="#html-validator">HTML/CSS валидация</a></li>
+                        <li><a href="#json-validator">JSON/XML проверка</a></li>
+                        <li><a href="#email-validator">Email/URL валидация</a></li>
+                        <li><a href="#security-tools">Безопасность</a></li>
+                        <li><a href="#color-tools">Цветовые инструменты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Особенности</h3>
+                    <ul class="footer-links">
+                        <li>✅ Полностью локальная работа</li>
+                        <li>🔒 Безопасность данных</li>
+                        <li>⚡ Мгновенные результаты</li>
+                        <li>📱 Адаптивный дизайн</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Проверочник Pro. Все инструменты работают офлайн в вашем браузере Автор NelikNG.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
