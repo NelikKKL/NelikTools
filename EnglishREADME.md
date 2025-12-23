@@ -6,6 +6,7 @@ This is an offline tool.
 HTML validation.    
 JSON validation.   
 XML validation.    
+CSS validation.     
 Password generator.      
 Gradient generator.     
 
