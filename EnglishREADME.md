@@ -9,7 +9,8 @@ XML validation.
 CSS validation.     
 Password generator.      
 Gradient generator. 
-Base64 encoding and decoding.     
+Base64 encoding and decoding.  
+palette generator.    
 
 ✅ Completely local work.        
 🔒 Data security.  
